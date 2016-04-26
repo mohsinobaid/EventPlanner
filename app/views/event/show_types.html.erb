@@ -1,0 +1,7 @@
+<h1><%= @type.name -%></h1>
+
+<ul>
+   <% @type.events.each do |c| %>
+   <li><%= link_to c.title, :action => "show", :id => c.id -%></li>
+   <% end %>
+</ul>

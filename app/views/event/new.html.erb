@@ -1,0 +1,19 @@
+<h1>Add new Event</h1>
+
+<%= form_tag :action => 'create' do %>
+<p><label for="event_title">Title</label>:
+
+<%= text_field 'events', 'title' %></p>
+<p><label for = "event_price">Price</label>:
+
+<%= text_field 'events', 'price' %></p>
+<p><label for="event_type_id">Type</label>:
+
+<%= collection_select(:events, :type_id, @types, :id, :name, promt: true) %></p>
+<p><label for="event_description">Description</label><br/>
+
+<%= text_area 'events', 'description' %></p>
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>

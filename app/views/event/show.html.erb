@@ -1,0 +1,13 @@
+<h1><%= @event.title %></h1>
+
+<p>
+	<strong>Price: </strong> $<%= @event.price %><br/>
+	<strong>Type: </strong> <%= link_to @event.type.name,
+	:action => "show_types", :id => @event.type.id %><br/>
+</p>
+
+<p><%= @event.description %></p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'list'} %>
